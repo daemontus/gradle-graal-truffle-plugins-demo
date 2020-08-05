@@ -1,0 +1,22 @@
+apply plugin: 'java-library'
+apply plugin: 'application'
+apply plugin: "org.graalvm.plugin.compiler"
+
+ext.graalVersion = "20.1.0"
+
+repositories { jcenter() }
+graal { version graalVersion }
+application { mainClassName 'demo.App' }
+
+dependencies {
+    implementation "org.graalvm.sdk:graal-sdk:$graalVersion"
+    installedLanguage "org.graalvm.js:js:$graalVersion"
+    installedLanguage "org.graalvm.js:js-scriptengine:$graalVersion"
+
+    testImplementation 'junit:junit:4.12'
+}
+
+task customRun(type: JavaExec) {
+    main = 'demo.App'
+    classpath = sourceSets.main.runtimeClasspath
+}
