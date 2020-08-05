@@ -1,3 +1,4 @@
 rootProject.name = 'demo'
 
 include 'fast-javascript'
+include 'native-image-simple'

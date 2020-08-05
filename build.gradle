@@ -4,6 +4,6 @@ buildscript {
         maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath 'com.github.daemontus:gradle-graal-truffle-plugins:-SNAPSHOT'
+        classpath 'com.github.daemontus:gradle-graal-truffle-plugins:7c5cb18532'
     }
 }
